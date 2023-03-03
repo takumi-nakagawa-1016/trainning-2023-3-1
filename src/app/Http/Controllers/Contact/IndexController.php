@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Department;
 
 class IndexController extends Controller
 {
@@ -17,6 +18,9 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         $contacts = Contact::all();
-        return view('contact.index')->with('contacts', $contacts);
+        $departments = Department::all();
+        return view('contact.index')
+            ->with('contacts', $contacts)
+            ->with('departments', $departments);
     }
 }

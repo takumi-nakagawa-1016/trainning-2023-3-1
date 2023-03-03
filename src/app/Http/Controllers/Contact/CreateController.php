@@ -19,7 +19,7 @@ class CreateController extends Controller
     public function __invoke(CreateRequest $request)
     {
         $contact = new Contact;
-        $contact->department_id = 1;
+        $contact->department_id = $request->department_id;
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->content = $request->content;
