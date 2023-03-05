@@ -2,7 +2,7 @@
 
 declare(strict_type=1);
 
-namespace App\Interface;
+namespace App\Interface\RepositoryInterface\Contact;
 
 interface ContactRepositroyInterface
 {

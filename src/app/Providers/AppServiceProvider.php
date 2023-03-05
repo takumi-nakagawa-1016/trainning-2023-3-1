@@ -13,7 +13,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            \App\Interface\RepositoryInterface\Contact\ContactRepositoryInterface::class,
+            \App\Repositories\Contact\ContactEQRepository::class,
+        );
+
+        $this->app->bind(
+            \App\Interface\ServiceInterface\Contact\ContactServiceInterface::class,
+            \App\Services\Contact\ContactService::class,
+        );
     }
 
     /**
