@@ -1,13 +1,23 @@
 <?php
 
+declare(strict_type=1);
+
 namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Contact\CreateRequest;
+use App\Services\Contact\ContactService;
 
 class CreateController extends Controller
 {
+    private $contact;
+
+    public function __construct(ConstractService $contact)
+    {
+        $this->contact = $contact;
+    }
+
     /**
      * Handle the incoming request.
      *
@@ -16,12 +26,7 @@ class CreateController extends Controller
      */
     public function __invoke(CreateRequest $request)
     {
-        $contact = new Contact;
-        $contact->department_id = $request->department_id;
-        $contact->name = $request->name;
-        $contact->email = $request->email;
-        $contact->content = $request->content;
-        $contact->save();
+        $contactRequested->contact = $request;
         return redirect()->route('contact.index');
     }
 }

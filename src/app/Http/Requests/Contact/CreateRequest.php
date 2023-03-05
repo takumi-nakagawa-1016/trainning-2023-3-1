@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_type=1);
+
 namespace App\Http\Requests\Contact;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -29,8 +31,5 @@ class CreateRequest extends FormRequest
             'content' => 'required|max:1000'
         ];
     }
-    public function contact(): string
-    {
-        return $this->input('contact');
-    }
+    
 }

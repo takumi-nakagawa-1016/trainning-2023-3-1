@@ -7,6 +7,6 @@ namespace App\Interface;
 interface ContactRepositroyInterface
 {
   public function StoreContact(Contact $contact): void;
-  public function GetContact(array $contacts): array;
+  public function GetAllContact(array $contacts): array;
   
 }
