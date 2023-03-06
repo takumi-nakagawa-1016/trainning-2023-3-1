@@ -29,7 +29,7 @@ class CreateController extends Controller
      * @param int $gender 性別
      * @param int[] $departmentId 
      * @return Contact 渡すContact
-     *//
+     */
     public function __invoke(CreateRequest $request)
     {
         $name = $request->name;
