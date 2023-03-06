@@ -8,12 +8,12 @@ use App\Interface\ContactQBRepositroyInterface;
 
 class ContactQBRepository implements ContactRepositroyInterface
 {
-  public function StoreContact(Contact $contact): void
+  public function storeContact(Contact $contact): void
   {
 
   }
 
-  public function GetAllContact(array $contacts): array
+  public function getAllContact(array $contacts): array
   {
 
   }

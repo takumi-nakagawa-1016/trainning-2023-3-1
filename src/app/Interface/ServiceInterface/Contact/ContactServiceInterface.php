@@ -6,6 +6,7 @@ namespace App\Interface\ServiceInterface\Contact;
 
 interface ContactServiceInterface
 {
-  public function StoreContact(Contact $contact): void;
-  public function GetAllContact(array $contacts): array;
+  public function existContact(int $id): bool;
+  public function storeContact(Contact $contact): bool;
+  public function getAllContact(array $contacts): array;
 }

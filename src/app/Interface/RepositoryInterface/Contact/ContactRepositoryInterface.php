@@ -4,9 +4,11 @@ declare(strict_type=1);
 
 namespace App\Interface\RepositoryInterface\Contact;
 
-interface ContactRepositroyInterface
+use App\Model\Contact;
+
+interface ContactRepositoryInterface
 {
-  public function StoreContact(Contact $contact): void;
-  public function GetAllContact(array $contacts): array;
-  
+  public function findByContactId(int $id): ?eloquentContact;
+  public function storeContact(Contact $contact): bool;
+  public function getAllContact(array $contacts): array;
 }
