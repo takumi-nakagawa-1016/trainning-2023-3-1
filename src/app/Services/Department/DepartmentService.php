@@ -7,6 +7,7 @@ namespace App\Services\Department;
 use App\Repositories\Department\DepartmentRepositoryInterface;
 use App\Services\Department\DepartmentServiceInterface;
 use App\Entities\Department;
+use Illuminate\Database\Eloquent\Collection;
 
 
 class DepartmentService implements DepartmentServiceInterface
@@ -18,7 +19,7 @@ class DepartmentService implements DepartmentServiceInterface
       $this->DepartmentRepository = $DepartmentRepository;
   }
 
-  public function getAllDepartment()
+  public function getAllDepartment(): Collection;
   {
     return $this->DepartmentRepository->getAllDepartment();
   }

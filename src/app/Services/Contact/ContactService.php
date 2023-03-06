@@ -6,7 +6,7 @@ namespace App\Services\Contact;
 
 use App\Repositories\Contact\ContactRepositoryInterface;
 use App\Services\Contact\ContactServiceInterface;
-
+use Illuminate\Database\Eloquent\Collection;
 use App\Models\Contact;
 
 class ContactService implements ContactServiceInterface
@@ -18,12 +18,12 @@ class ContactService implements ContactServiceInterface
       $this->ContactRepository = $ContactRepository;
   }
 
-  public function createContact($contactRequested)
+  public function createContact($string $name, string $email, string $content, int $departmentId): ContactRepository;
   {
-    return $this->ContactRepository->createContact($contactRequested);
+    return $this->ContactRepository->createContact($string $name, string $email, string $content, int $departmentId);
   }
 
-  public function getAllContact()
+  public function getAllContact(): Collection
   {
     return $this->ContactRepository->getAllContact();
   }

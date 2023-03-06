@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Contact\CreateRequest;
 use App\Services\Contact\ContactServiceInterface;
+use Illuminate\Database\Eloquent\Collection;
 
 class CreateController extends Controller
 {
@@ -24,10 +25,10 @@ class CreateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(CreateRequest $request): object
+    public function __invoke(CreateRequest $request): ?object
     {
-        $contactRequested = $request;
-        $this->ContactService->createContact($contactRequested);
+        $string $name, string $email, string $content, int $departmentId = $request;
+        $this->ContactService->createContact(string $name, string $email, string $content, int $departmentId);
         return redirect()->route('contact.index');
     }
 }

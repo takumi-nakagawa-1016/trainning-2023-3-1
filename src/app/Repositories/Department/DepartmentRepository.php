@@ -9,6 +9,7 @@ use App\Services\Department\DepartmentService;
 use App\Services\Department\DepartmentServiceInterface;
 use App\Entities\Department;
 use App\Models\Department AS DepartmentModel;
+use Illuminate\Database\Eloquent\Collection;
 
 class DepartmentRepository implements DepartmentRepositoryInterface
 {
@@ -20,7 +21,7 @@ class DepartmentRepository implements DepartmentRepositoryInterface
     $this->DepartmentModel = $DepartmentModel;
   }
 
-  public function getAllDepartment()
+  public function getAllDepartment(): Collection;
   {
     $Departments = DepartmentModel::all();
     return $Departments;

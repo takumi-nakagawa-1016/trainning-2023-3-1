@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\Contact\ContactServiceInterface;
 use App\Services\Department\DepartmentServiceInterface;
+use Illuminate\Database\Eloquent\Collection;
 
 class IndexController extends Controller
 {
@@ -26,7 +27,7 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): ?object
     {
         $contacts = $this->ContactService->getAllContact();
         $depatments = $this->DepartmentService->getAllDepartment();

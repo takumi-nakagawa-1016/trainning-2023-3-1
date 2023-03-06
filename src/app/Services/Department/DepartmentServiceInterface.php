@@ -7,5 +7,5 @@ use App\Entities\Department;
 
 interface DepartmentServiceInterface
 {
-  public function getAllDepartment();
+  public function getAllDepartment(): Collection;
 }
