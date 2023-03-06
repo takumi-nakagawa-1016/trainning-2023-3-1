@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_type=1);
+
+namespace App\Repositories\Department;
+
+use App\Repositories\Department\DepartmentRepositoryInterface;
+use App\Services\Department\DepartmentService;
+use App\Services\Department\DepartmentServiceInterface;
+use App\Entities\Department;
+use App\Models\Department AS DepartmentModel;
+
+class DepartmentRepository implements DepartmentRepositoryInterface
+{
+
+  protected $DepartmentModel;
+
+  public function __construct(DepartmentModel $DepartmentModel)
+  {
+    $this->DepartmentModel = $DepartmentModel;
+  }
+
+  public function getAllDepartment()
+  {
+    $Departments = DepartmentModel::all();
+    return $Departments;
+  }
+}
+

@@ -11,13 +11,13 @@ class Contact
     protected $content;
     protected $department_id;
 
-    public function __construct(int $id, string $name, string $author)
+    public function __construct(int $id, string $name, string $email, string $content, int $department_id)
     {
         $this->id     = $id;
         $this->name  = $name;
         $this->email = $email;
         $this->content = $content;
-        $this->department_if = $department_id;
+        $this->department_id = $department_id;
     }
 
     public function getId(): int

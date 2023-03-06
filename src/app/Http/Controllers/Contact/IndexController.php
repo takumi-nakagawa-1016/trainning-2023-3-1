@@ -6,11 +6,20 @@ namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Contact;
-use App\Models\Department;
+use App\Services\Contact\ContactServiceInterface;
+use App\Services\Department\DepartmentServiceInterface;
 
 class IndexController extends Controller
 {
+    private $ContactService;
+    private $DepartmentService;
+
+    public function __construct(ContactServiceInterface $ContactService, DepartmentServiceInterface $DepartmentService)
+    {
+        $this->ContactService = $ContactService;
+        $this->DepartmentService = $DepartmentService;
+    }
+
     /**
      * Handle the incoming request.
      *
@@ -19,10 +28,11 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $contacts = Contact::all();
-        $departments = Department::all();
+        $contacts = $this->ContactService->getAllContact();
+        $depatments = $this->DepartmentService->getAllDepartment();
+        
         return view('contact.index')
             ->with('contacts', $contacts)
-            ->with('departments', $departments);
+            ->with('departments', $depatments);
     }
 }

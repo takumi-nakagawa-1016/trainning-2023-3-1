@@ -4,38 +4,31 @@ declare(strict_type=1);
 
 namespace App\Services\Contact;
 
-use App\Interface\ServiceInterface\Contact\ContactServiceInterface;
-use App\Interface\RepositoryInterface\Contact\ContactRepositoryInterface;
+use App\Repositories\Contact\ContactRepositoryInterface;
+use App\Services\Contact\ContactServiceInterface;
+use App\Entities\Contact;
 
-class ContactService
+
+class ContactService implements ContactServiceInterface
 {
-  private $contactRepository;
+  private $ContactRepository;
 
-  public function __construct(ContactRepositoryInterface $contactRepository)
+  public function __construct(ContactRepositoryInterface $ContactRepository)
   {
-      $this->contactRepository = $contactRepository;
+      $this->ContactRepository = $ContactRepository;
   }
 
-  public function existContact(int $id): bool
+  public function storeContact(Contact $contact): bool
   {
-    if (!$this->contactRepository->findByContactId($id)) {
-      return false;
-    }
-    return ture;
-  }
-
-  public function storeContact(ContactService $contactRepository): bool
-  {
-    if ($this->storeContact($contactRepository)) {
+    if ($this->storeContact($contact)) {
       return true;
     }
     return false;
   }
 
-  public function getAllContact(array $contacts): array
+  public function getAllContact()
   {
-    $contacts = Contact::all();
-    return $contacts;
+    return $this->ContactRepository->getAllContact();
   }
 }
 
