@@ -28,7 +28,8 @@ class CreateRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'email' => 'required|max:255,email:rfc,dns',
-            'content' => 'required|max:1000'
+            'content' => 'required|max:1000',
+            'age' => 'integer|between:0,100'
         ];
     }
     

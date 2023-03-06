@@ -14,7 +14,7 @@
           <label for="contact-department">お問い合わせ部署</label>
           <select name="department_id" id="department_id">
             @foreach($departments as $department)
-              <option value="{{ $department->id }}">{{ $department->name }}</option>
+              <option value={{ $department->id }}>{{ $department->name }}</option>
             @endforeach
           </select>
         </div>
@@ -29,6 +29,18 @@
         <div>
           <p><label for="contact-content">お問い合わせ内容<span>(1000文字まで)</span></label></p>
           <p><textarea name="content" id="content" cols="30" rows="10"></textarea></p>
+        </div>
+        <div>
+          <p><label for="contact-age">年齢</label></p>
+          <p><input name='age'></input></p>
+        </div>
+        <div>
+          <p><label for="contact-gender">性別</label></p>
+          <select name='gender'>
+            <option value="1">男性</option>
+            <option value="2">女性</option>
+            <option value="3">選択しない</option>
+          </select>
         </div>
         <p><button type='submit'>送信</button></p>
       </form>

@@ -31,9 +31,11 @@ class CreateController extends Controller
         $name = $request->name;
         $email = $request->email;
         $content = $request->content;
+        $age = (int) $request->age;
+        $gender = (int) $request->gender;
         $departmentId = (int) $request->department_id;
 
-        $this->ContactService->createContact($name, $email, $content, $departmentId);
+        $this->ContactService->createContact($name, $email, $content, $age, $gender, $departmentId);
         return redirect()->route('contact.index');
     }
 }

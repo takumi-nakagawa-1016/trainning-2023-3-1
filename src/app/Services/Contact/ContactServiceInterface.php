@@ -9,6 +9,6 @@ use App\Models\Contact;
 
 interface ContactServiceInterface
 {
-  public function createContact(string $name, string $email, string $content, int $departmentId): Contact;
+  public function createContact(string $name, string $email, string $content,int $age, int $gender, int $departmentId): Contact;
   public function getAllContact(): Collection;
 }

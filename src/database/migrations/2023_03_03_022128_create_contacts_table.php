@@ -17,6 +17,8 @@ class CreateContactsTable extends Migration
             $table->id();
             $table->string('name', 255)->nullable(false);
             $table->string('email', 255)->nullable(false);
+            $table->integer('gender')->nullable(false);
+            $table->integer('age')->nullable(false);
             $table->text('content', 1000)->nullable(false);
             $table->foreignId('department_id')->constrained('departments');
             $table->timestamps();
