@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace App\Repositories\Contact;
 
 use App\Repositories\Contact\ContactRepositoryInterface;
-use App\Services\Contact\ContactService;
-use App\Services\Contact\ContactServiceInterface;
 use App\Models\Contact;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -20,7 +18,7 @@ class ContactRepository implements ContactRepositoryInterface
     $this->Contact = $Contact;
   }
 
-  public function createContact($string $name, string $email, string $content, int $departmentId): Contact
+  public function createContact(string $name, string $email, string $content, int $departmentId)
   {
     // $contact = new Contact;
     return Contact::create(
@@ -30,7 +28,7 @@ class ContactRepository implements ContactRepositoryInterface
         'content' => $content,
         'department_id' => $departmentId
       ]
-      );
+    );
   }
 
   public function getAllContact(): Collection

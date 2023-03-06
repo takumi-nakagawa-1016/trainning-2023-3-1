@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace App\Services\Department;
 
@@ -19,7 +19,7 @@ class DepartmentService implements DepartmentServiceInterface
       $this->DepartmentRepository = $DepartmentRepository;
   }
 
-  public function getAllDepartment(): Collection;
+  public function getAllDepartment(): Collection
   {
     return $this->DepartmentRepository->getAllDepartment();
   }

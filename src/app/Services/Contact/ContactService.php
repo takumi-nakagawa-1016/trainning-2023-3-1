@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace App\Services\Contact;
 
@@ -18,9 +18,9 @@ class ContactService implements ContactServiceInterface
       $this->ContactRepository = $ContactRepository;
   }
 
-  public function createContact($string $name, string $email, string $content, int $departmentId): ContactRepository;
+  public function createContact(string $name, string $email, string $content, int $departmentId)
   {
-    return $this->ContactRepository->createContact($string $name, string $email, string $content, int $departmentId);
+    $this->ContactRepository->createContact($name, $email, $content, $departmentId);
   }
 
   public function getAllContact(): Collection

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_type=1);
+declare(strict_types=1);
 
 namespace App\Repositories\Department;
 
@@ -21,7 +21,7 @@ class DepartmentRepository implements DepartmentRepositoryInterface
     $this->DepartmentModel = $DepartmentModel;
   }
 
-  public function getAllDepartment(): Collection;
+  public function getAllDepartment(): Collection
   {
     $Departments = DepartmentModel::all();
     return $Departments;
