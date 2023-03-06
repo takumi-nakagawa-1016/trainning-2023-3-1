@@ -18,7 +18,9 @@ class DepartmentService implements DepartmentServiceInterface
   {
       $this->DepartmentRepository = $DepartmentRepository;
   }
-
+  /**
+   * @inheritDoc
+   */
   public function getAllDepartment(): Collection
   {
     return $this->DepartmentRepository->getAllDepartment();

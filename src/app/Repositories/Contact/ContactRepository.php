@@ -17,7 +17,9 @@ class ContactRepository implements ContactRepositoryInterface
   {
     $this->Contact = $Contact;
   }
-
+  /**
+   * @inheritDoc
+   */
   public function createContact(string $name, string $email, string $content,int $age, int $gender, int $departmentId): Contact
   {
     return Contact::create(
@@ -31,7 +33,9 @@ class ContactRepository implements ContactRepositoryInterface
       ]
     );
   }
-
+  /**
+   * @inheritDoc
+   */
   public function getAllContact(): Collection
   {
     $contacts = Contact::with('department')->get();

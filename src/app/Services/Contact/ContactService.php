@@ -17,12 +17,16 @@ class ContactService implements ContactServiceInterface
   {
       $this->ContactRepository = $ContactRepository;
   }
-
+  /**
+   * @inheritDoc
+   */
   public function createContact(string $name, string $email, string $content,int $age, int $gender, int $departmentId): Contact
   {
     return $this->ContactRepository->createContact($name, $email, $content, $age, $gender, $departmentId);
   }
-
+  /**
+   * @inheritDoc
+   */
   public function getAllContact(): Collection
   {
     return $this->ContactRepository->getAllContact();

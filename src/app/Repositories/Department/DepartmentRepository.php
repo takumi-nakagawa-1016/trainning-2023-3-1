@@ -20,7 +20,9 @@ class DepartmentRepository implements DepartmentRepositoryInterface
   {
     $this->DepartmentModel = $DepartmentModel;
   }
-
+  /**
+   * @inheritDoc
+   */
   public function getAllDepartment(): Collection
   {
     $Departments = DepartmentModel::all();

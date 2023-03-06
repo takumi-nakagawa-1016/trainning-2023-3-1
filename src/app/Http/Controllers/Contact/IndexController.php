@@ -21,12 +21,10 @@ class IndexController extends Controller
         $this->DepartmentService = $DepartmentService;
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   /**
+   * DBから取得したContactとDepartmentをコントローラーに渡します
+   * @return Collection 取得したContactとDepartmentインスタンスの配列
+   */
     public function __invoke(Request $request)
     {
         $contacts = $this->ContactService->getAllContact();
