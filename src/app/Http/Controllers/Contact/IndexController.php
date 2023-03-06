@@ -27,7 +27,7 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request): ?object
+    public function __invoke(Request $request)
     {
         $contacts = $this->ContactService->getAllContact();
         $depatments = $this->DepartmentService->getAllDepartment();

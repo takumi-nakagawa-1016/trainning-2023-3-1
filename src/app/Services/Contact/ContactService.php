@@ -18,9 +18,9 @@ class ContactService implements ContactServiceInterface
       $this->ContactRepository = $ContactRepository;
   }
 
-  public function createContact(string $name, string $email, string $content, int $departmentId)
+  public function createContact(string $name, string $email, string $content, int $departmentId): Contact
   {
-    $this->ContactRepository->createContact($name, $email, $content, $departmentId);
+    return $this->ContactRepository->createContact($name, $email, $content, $departmentId);
   }
 
   public function getAllContact(): Collection

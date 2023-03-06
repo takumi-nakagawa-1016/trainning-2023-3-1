@@ -18,9 +18,8 @@ class ContactRepository implements ContactRepositoryInterface
     $this->Contact = $Contact;
   }
 
-  public function createContact(string $name, string $email, string $content, int $departmentId)
+  public function createContact(string $name, string $email, string $content, int $departmentId): Contact
   {
-    // $contact = new Contact;
     return Contact::create(
       [
         'name' => $name,
