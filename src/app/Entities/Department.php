@@ -9,14 +9,14 @@ class Department
     protected $name;
     protected $maneger_name;
 
-    public function __construct(int $id, string $name, string $maneger_name)
+    public function __construct(?int $id, string $name, string $maneger_name)
     {
         $this->id     = $id;
         $this->name  = $name;
         $this->maneger_name = $maneger_name;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

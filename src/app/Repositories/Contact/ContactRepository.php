@@ -7,33 +7,34 @@ namespace App\Repositories\Contact;
 use App\Repositories\Contact\ContactRepositoryInterface;
 use App\Services\Contact\ContactService;
 use App\Services\Contact\ContactServiceInterface;
-use App\Entities\Contact;
-use App\Models\Contact AS ContactModel;
+use App\Models\Contact;
 
 class ContactRepository implements ContactRepositoryInterface
 {
 
-  protected $ContactModel;
+  protected $Contact;
 
-  public function __construct(ContactModel $ContactModel)
+  public function __construct(Contact $Contact)
   {
-    $this->ContactModel = $ContactModel;
+    $this->Contact = $Contact;
   }
 
-  public function storeContact(Contact $contact): bool
+  public function createContact($contactRequested)
   {
-    $contactRequested = $this->eloquentContact->newInstance();
-    $contactRequested->department_id = $contact->department_id;
-    $contactRequested->name = $contact->name;
-    $contactRequested->email = $contact->email;
-    $contactRequested->content = $contact->content;
-    $contactRequested->save();
-    return $contactRequested->save();
+    $contact = new Contact;
+    $contact::create(
+      [
+        'name' => $contactRequested->name,
+        'email' => $contactRequested->email,
+        'content' => $contactRequested->content,
+        'department_id' => $contactRequested->department_id
+      ]
+      );
   }
 
   public function getAllContact()
   {
-    $contacts = ContactModel::with('department_id')->get();
+    $contacts = Contact::with('department')->get();
     return $contacts;
   }
 }

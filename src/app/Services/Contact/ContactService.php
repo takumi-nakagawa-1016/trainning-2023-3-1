@@ -6,8 +6,8 @@ namespace App\Services\Contact;
 
 use App\Repositories\Contact\ContactRepositoryInterface;
 use App\Services\Contact\ContactServiceInterface;
-use App\Entities\Contact;
 
+use App\Models\Contact;
 
 class ContactService implements ContactServiceInterface
 {
@@ -18,12 +18,9 @@ class ContactService implements ContactServiceInterface
       $this->ContactRepository = $ContactRepository;
   }
 
-  public function storeContact(Contact $contact): bool
+  public function createContact($contactRequested)
   {
-    if ($this->storeContact($contact)) {
-      return true;
-    }
-    return false;
+    return $this->ContactRepository->createContact($contactRequested);
   }
 
   public function getAllContact()

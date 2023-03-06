@@ -5,24 +5,17 @@ namespace App\Entities;
 
 class Contact
 {
-    protected $id;
     protected $name;
     protected $email;
     protected $content;
-    protected $department_id;
+    protected $departmentId;
 
-    public function __construct(int $id, string $name, string $email, string $content, int $department_id)
+    public function __construct($name, $email, $content, $departmentId)
     {
-        $this->id     = $id;
         $this->name  = $name;
         $this->email = $email;
         $this->content = $content;
-        $this->department_id = $department_id;
-    }
-
-    public function getId(): int
-    {
-        return $this->id;
+        $this->departmentId = $departmentId;
     }
 
     public function getName(): string
@@ -40,8 +33,8 @@ class Contact
         return $this->content;
     }
 
-    public function getDepartmentID(): string
+    public function getDepartmentID(): int
     {
-        return $this->department_id;
+        return $this->departmentId;
     }
 }
