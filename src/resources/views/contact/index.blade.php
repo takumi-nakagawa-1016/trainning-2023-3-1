@@ -46,12 +46,14 @@
       </form>
     </div>
   <h1>お問い合わせ内容一覧</h1>
-  <table class="table table-striped">
+  <table class="table table-striped", border="1">
   <thead>
     <tr>
       <th>問い合わせ部署</th>
       <th>氏名</th>
       <th>メールアドレス</th>
+      <th>年齢</th>
+      <th>性別</th>
       <th>お問い合わせ内容</th>
     </tr>
   </thead>
@@ -60,6 +62,8 @@
     <tr>
       <td>{{ $contact->department->name}}</td>
       <td>{{ $contact->name}}</td>
+      <td>{{ $contact->age}}</td>
+      <td>{{ $contact->gender_label}}</td>
       <td>{{ $contact->email}}</td>
       <td>{{ $contact->content}}</td>
     </tr>

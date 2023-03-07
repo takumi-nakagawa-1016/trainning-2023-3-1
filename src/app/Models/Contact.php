@@ -20,7 +20,15 @@ class Contact extends Model
 
     protected $fillable = ['name', 'email', 'content','age', 'gender', 'department_id'];
 
-    
+     /**
+     * 定数GENDERに配列を代入
+     *
+     */
+    const GENDER = [
+        1 => [ 'label' => '男' ],
+        2 => [ 'label' => '女' ],
+        3 => [ 'label' => '未選択' ],
+    ];
 
     public function department()
     {
@@ -30,10 +38,9 @@ class Contact extends Model
      * Contactテーブルにはgenderは数字で表記されているため表示する際には数字を性別に変換するためのメソッド
      * @return string 性別　[1->"男",2->"女性",3->"未選択"]
      */
-    // public function changeNumberIntoGender(int $contactGenderNumber):string
-    // {
-    //     if($contactGenderNumber === 1){
-            
-    //     }
-    // }
+    public function getGenderLabelAttribute():string
+    {
+        $gender = $this->attributes['gender'];
+        return self::GENDER[$gender]['label'];
+    }
 }
