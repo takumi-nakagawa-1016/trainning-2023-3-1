@@ -20,7 +20,7 @@ class Contact extends Model
 
     protected $fillable = ['name', 'email', 'content','age', 'gender', 'department_id'];
 
-     /**
+    /**
      * 定数GENDERに配列を代入
      *
      */
@@ -34,7 +34,7 @@ class Contact extends Model
     {
         return $this->belongsTo(Department::class);
     }
-    
+
     /**
      * Contactテーブルにはgenderは数字で表記されているため表示する際には数字を性別に変換するためのメソッド
      * @return string 性別　[1->"男",2->"女性",3->"未選択"]
