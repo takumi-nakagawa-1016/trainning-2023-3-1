@@ -44,7 +44,7 @@ class CreateRequest extends FormRequest
     {
         return $this->input('email');
     }
-　　// contentだとエラーが起きるのでcontantにしています
+    // contentだとエラーが起きるのでcontantにしています
     public function getContant(): string
     {
         return $this->input('content');
