@@ -26,11 +26,12 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
-            'email' => 'required|max:255,email:rfc,dns',
-            'content' => 'required|max:1000',
-            'age' => 'integer|between:0,100',
-            'gender' => 'integer|between:1,3'
+            'name' => ['required','max:255'],
+            'email' => ['required','max:255','email:rfc,dns'],
+            'content' => ['required','max:1000'],
+            'age' => ['required','numeric','between:1,100'],
+            'gender' => ['required','numeric','between:1,3'],
+            'department_id' => ['required'],
         ];
     }
     

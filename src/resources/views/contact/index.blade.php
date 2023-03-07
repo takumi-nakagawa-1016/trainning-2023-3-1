@@ -10,6 +10,11 @@
     <div class="form">
       <form action="{{ route('contact.create') }}" method="post">
         @csrf
+        @if(count($errors))
+          @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        @endif
         <div>
           <label for="contact-department">お問い合わせ部署</label>
           <select name="department_id" id="department_id">
@@ -67,7 +72,7 @@
       <td>{{ $contact->email}}</td>
       <td>{{ $contact->content}}</td>
     </tr>
-    @endforeach
+  @endforeach
   </tbody>
 </body>
 </html>
