@@ -39,7 +39,7 @@
           <select name='gender'>
             <option value="1">男性</option>
             <option value="2">女性</option>
-            <option value="3">選択しない</option>
+            <option value="3">未選択</option>
           </select>
         </div>
         <p><button type='submit'>送信</button></p>

@@ -20,8 +20,20 @@ class Contact extends Model
 
     protected $fillable = ['name', 'email', 'content','age', 'gender', 'department_id'];
 
+    
+
     public function department()
     {
         return $this->belongsTo(Department::class);
     }
+    /**
+     * Contactテーブルにはgenderは数字で表記されているため表示する際には数字を性別に変換するためのメソッド
+     * @return string 性別　[1->"男",2->"女性",3->"未選択"]
+     */
+    // public function changeNumberIntoGender(int $contactGenderNumber):string
+    // {
+    //     if($contactGenderNumber === 1){
+            
+    //     }
+    // }
 }
