@@ -24,6 +24,7 @@ interface ContactServiceInterface
    * @return Contact 渡すContact
    */
   public function createContact(string $name, string $email, string $content,int $age, int $gender, int $departmentId): Contact;
+  
   /**
    * DBから取得したContactをコントローラーに渡します
    * @return Collection 取得したContactインスタンスの配列

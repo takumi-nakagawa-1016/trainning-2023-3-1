@@ -32,12 +32,12 @@ class CreateController extends Controller
      */
     public function __invoke(CreateRequest $request)
     {
-        $name = $request->name;
-        $email = $request->email;
-        $content = $request->content;
-        $age = (int) $request->age;
-        $gender = (int)$request->gender;
-        $departmentId = (int) $request->department_id;
+        $name = $request->getName();
+        $email = $request->getEmail();
+        $content = $request->getContant();
+        $age = $request->getAge();
+        $gender = $request->getGender();
+        $departmentId = $request->getDepartmentId();
 
         $this->ContactService->createContact($name, $email, $content, $age, $gender, $departmentId);
         return redirect()->route('contact.index');

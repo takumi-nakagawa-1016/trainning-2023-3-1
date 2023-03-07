@@ -35,4 +35,33 @@ class CreateRequest extends FormRequest
         ];
     }
     
+    public function getName(): string
+    {
+        return $this->input('name');
+    }
+
+    public function getEmail(): string
+    {
+        return $this->input('email');
+    }
+　　// contentだとエラーが起きるのでcontantにしています
+    public function getContant(): string
+    {
+        return $this->input('content');
+    }
+
+    public function getAge(): int
+    {
+        return (int) $this->input('age');
+    }
+
+    public function getGender(): int
+    {
+        return (int) $this->input('gender');
+    }
+
+    public function getDepartmentId(): int
+    {
+        return (int) $this->input('department_id');
+    }
 }
