@@ -37,6 +37,7 @@ class Contact extends Model
 
     /**
      * Contactテーブルにはgenderは数字で表記されているため表示する際には数字を性別に変換するためのメソッド
+     * $gender = $this->attributes['gender'];　＄thisにgendarカラムの値を代入　attribute[]はattribute['値を取得するキー']でそのキーの値を取得できる
      * @return string 性別　[1->"男",2->"女性",3->"未選択"]
      */
     public function getGenderLabelAttribute():string
