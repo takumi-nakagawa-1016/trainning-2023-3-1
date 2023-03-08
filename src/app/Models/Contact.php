@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Contactモデル　お問い合わせに関するモデル
+ * Contactモデル　お問い合わせのモデル
  * @param string $name 名前
  * @param string $email メールアドレス
  * @param string $content  お問い合わせ内容
